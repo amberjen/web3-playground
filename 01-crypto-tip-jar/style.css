@@ -25,12 +25,12 @@ p, h1, h2, h3, h4, h5, h6 {
   --font-secondary: 'Space Grotesk', sans-serif;
   --radius-md: 5px;
   --radius-lg: 11px;
+  --primary: #070a0a;
 
   --card-01-card-bg: #04163d;
   --card-01-primary: #c9f4fe;
   --card-01-tag-bg: rgba(255, 255, 255, .1);
 
- 
   --card-02-card-bg: #35063d;
   --card-02-primary: #dc5ef2;
   --card-02-tag-bg: #4b084f;
@@ -46,7 +46,7 @@ body {
   font-size: 16px;
   line-height: 1.2;
   padding: 24px 48px;
-  background: #070a0a;
+  background: var(--primary);
   color: #fff;
 }
 
@@ -151,12 +151,47 @@ h3 {
 /* -------------------------- */
 /*        Tip Form       */
 /* -------------------------- */
-
-/* TEMP */
 form {
   display: none;
+  background: #fff;
+  color: var(--primary);
+  margin-top: 8px;
+  border-radius: var(--radius-lg);
+  padding: 8px 8px 8px 16px;
 }
 
+
 form.has-eth {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px;
 }
+
+.form-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input {
+  border: none;
+  flex: 1;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--primary);
+}
+
+input:focus { outline: none; }
+
+.btn-send {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-lg);
+  transition: all .12s ease-out;
+}
+
+.btn-send:hover { opacity: .9; }

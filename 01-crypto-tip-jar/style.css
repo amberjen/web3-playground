@@ -1,0 +1,162 @@
+/* -------------------------- */
+/*        Minimal Reset       */
+/* -------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html, body { height: 100%; }
+body { -webkit-font-smoothing: antialiased; }
+main { display: block }
+input, button, textarea, select { font: inherit; }
+img, picture, video, canvas, svg { display: block; }
+button { border: none; cursor: pointer; }
+a { color: inherit; text-decoration: none; }  
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  font-family: inherit; 
+  font-size: inherit; 
+  font-weight: 400; 
+}
+
+/* -------------------------- */
+/*        Global       */
+/* -------------------------- */
+:root {
+  --font-primary: 'Goldman', cursive;
+  --font-secondary: 'Space Grotesk', sans-serif;
+  --radius-md: 5px;
+  --radius-lg: 11px;
+
+  --card-01-card-bg: #04163d;
+  --card-01-primary: #c9f4fe;
+  --card-01-tag-bg: rgba(255, 255, 255, .1);
+
+ 
+  --card-02-card-bg: #35063d;
+  --card-02-primary: #dc5ef2;
+  --card-02-tag-bg: #4b084f;
+ 
+  --card-03-card-bg: #9fde2a;
+  --card-03-primary: #0b361a;
+  --card-03-tag-bg: #87c90c;
+
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 24px 48px;
+  background: #070a0a;
+  color: #fff;
+}
+
+.font-secondary { 
+  font-family: var(--font-secondary); 
+  font-weight: 500;
+}
+
+/* -------------------------- */
+/*        Intro       */
+/* -------------------------- */
+.intro { margin-bottom: 24px; }
+
+h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* -------------------------- */
+/*        Card       */
+/* -------------------------- */
+.card-group {
+  display: grid;
+  grid-template-columns: 1.1fr .75fr 1.1fr;
+  gap: 8px;
+}
+
+.card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.tag-wrapper {
+  display: flex;
+  gap: 4px;
+  align-self: flex-start;
+}
+
+.tag {
+  border-radius: var(--radius-md);
+  font-size: .9375rem;
+  padding: 8px;
+}
+
+h3 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+/* ---- Card 01 ---- */
+.card-01 { background: var(--card-01-card-bg); }
+
+.card-01 .tag {
+  color: #fff;
+  background: var(--card-01-tag-bg);
+}
+
+.card-01 .tag.primary { 
+  background: var(--card-01-primary); 
+  color: var(--card-01-card-bg);
+}
+
+.card-01 h3 { color: var(--card-01-primary); }
+
+/* ---- Card 02 ---- */
+.card-02 { background: var(--card-02-card-bg); }
+
+.card-02 .tag {
+  color: var(--card-02-primary);
+  background: var(--card-02-tag-bg);
+}
+
+.card-02 .tag.primary { 
+  background: var(--card-02-primary); 
+  color: var(--card-02-card-bg);
+}
+
+.card-02 .date { color: var(--card-02-primary); }
+
+/* ---- Card 03 ---- */
+.card-03 {
+  background: var(--card-03-card-bg);
+  color: var(--card-03-primary);
+}
+
+.card-03 .tag { background: var(--card-03-tag-bg); }
+
+.card-03 .tag.primary { 
+  background: var(--card-03-primary); 
+  color: var(--card-03-card-bg);
+}
+
+
+/* -------------------------- */
+/*        Tip Form       */
+/* -------------------------- */
+
+/* TEMP */
+form {
+  display: none;
+}
+
+form.has-eth {
+  display: block;
+}

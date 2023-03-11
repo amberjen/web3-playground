@@ -11,10 +11,10 @@
     <section>
       <h2>Gallery</h2>
       <div class="gallery-card-group">
-        <GalleryCard imgSrc="/01.jpg" title="Project 01" description="Just throw something nonsense text over here." />
-        <GalleryCard imgSrc="/02.jpg" title="Project 02" description="Just throw something nonsense text over here." />
-        <GalleryCard imgSrc="/03.jpg" title="Project 03" description="Just throw something nonsense text over here." />
-        <GalleryCard imgSrc="/04.jpg" title="Project 04" description="Just throw something nonsense text over here." />
+        <GalleryCard imgSrc="/01.jpg" title="Abstract Dreamscape" description="Blurring reality and imagination." />
+        <GalleryCard imgSrc="/02.jpg" title="Cybernetic Symphony" description="A harmonious man-machine blend." />
+        <GalleryCard imgSrc="/03.jpg" title="Technicolor Jungle" description="Lush fantasy jungle in a digital painting." />
+        <GalleryCard imgSrc="/04.jpg" title="Glitched Metropolis" description="Futuristic metropolis exploration." />
       </div>
     </section>
     <section>

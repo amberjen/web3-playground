@@ -1,6 +1,65 @@
+<script>
+  import { accounts, isLoggedIn } from '../stores/accountStores';
+  import { onMount } from 'svelte';
+
+  console.log('init', $accounts);
+
+  $: checkLogInState = () => {
+    if($accounts.length > 0) {
+      isLoggedIn.set(true);
+    } else {
+      isLoggedIn.set(false);
+    }
+  };
+
+  onMount(() => {
+
+    // async () => {
+    //  $accounts = await window.ethereum.request({
+    //     method: 'eth_accounts'
+    //   });
+
+    //   console.log('temp', $accounts);
+
+    // };
+
+
+    window.ethereum.on('accountsChanged', async () => {
+      console.log('accounts changed');
+
+      $accounts = await window.ethereum.request({
+        method: 'eth_accounts'
+      });
+
+      checkLogInState();
+
+    });
+
+  });
+
+
+  const connectWallet = async () => {
+    $accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts'
+    });
+
+    console.log('connect', $accounts);
+    
+    checkLogInState();
+    
+  };
+
+  $: console.log('isLoggedIn', $isLoggedIn);
+</script>
+
+
 <header>
   <h1>ArtiVerse</h1>
-  <button class="btn-connect">Connect Wallet</button>
+  {#if $isLoggedIn}
+  <p>{$accounts[0]}</p>
+  {:else}
+  <button class="btn-connect" on:click={connectWallet}>Connect Wallet</button>
+  {/if}
 </header>
 
 <style>
@@ -10,6 +69,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
   }
 
   h1 { font-size: 1.25rem; }

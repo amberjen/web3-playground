@@ -9,5 +9,6 @@
 
 
 ### 02 ArtiVerse
+<img src="./screenshots/02-arti-verse.png" width="480" alt="" />
 
 - Fonts: Zen Dots, Fungis

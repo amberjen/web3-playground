@@ -6,3 +6,8 @@
 - Support artist by sending Ether via MetaMask
 - Card hover tilt effects
 - Fonts: Goldman, Space Grotesk
+
+
+### 02 ArtiVerse
+
+- Fonts: Zen Dots, Fungis

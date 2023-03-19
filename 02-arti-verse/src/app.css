@@ -20,6 +20,21 @@ p, h1, h2, h3, h4, h5, h6 {
 /* -------------------------- */
 /*       Global       */
 /* -------------------------- */
+
+@font-face {
+  font-family: 'Fungis';
+  src: url('/fonts/FUNGIS-Regular.woff2') format('woff2'), url('/fonts/FUNGIS-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Fungis';
+  src: url('/fonts/FUNGIS-Bold.woff2') format('woff2'), url('/fonts/FUNGIS-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+
 :root {
   --font-primary: 'Zen Dots', sans-serif;
   --font-secondary: 'Fungis', sans-serif;

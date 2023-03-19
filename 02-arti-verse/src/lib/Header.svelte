@@ -1,8 +1,7 @@
 <script>
-  import { accounts, isLoggedIn } from '../stores/accountStores';
   import { onMount } from 'svelte';
-
-  console.log('init', $accounts);
+  import { accounts, isLoggedIn } from '../stores/accountStores';
+  import EthName from './EthName.svelte';
 
   $: checkLogInState = () => {
     if($accounts.length > 0) {
@@ -13,16 +12,6 @@
   };
 
   onMount(() => {
-
-    // async () => {
-    //  $accounts = await window.ethereum.request({
-    //     method: 'eth_accounts'
-    //   });
-
-    //   console.log('temp', $accounts);
-
-    // };
-
 
     window.ethereum.on('accountsChanged', async () => {
       console.log('accounts changed');
@@ -42,21 +31,18 @@
     $accounts = await window.ethereum.request({
       method: 'eth_requestAccounts'
     });
-
-    console.log('connect', $accounts);
     
     checkLogInState();
     
   };
 
-  $: console.log('isLoggedIn', $isLoggedIn);
 </script>
 
 
 <header>
   <h1>ArtiVerse</h1>
   {#if $isLoggedIn}
-  <p>{$accounts[0]}</p>
+  <EthName account={$accounts[0]} />
   {:else}
   <button class="btn-connect" on:click={connectWallet}>Connect Wallet</button>
   {/if}

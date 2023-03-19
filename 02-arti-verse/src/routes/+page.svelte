@@ -3,6 +3,9 @@
   import GalleryCard from "../lib/GalleryCard.svelte";
   import FeedbackCard from "../lib/FeedbackCard.svelte";
   import Footer from "../lib/Footer.svelte";
+
+  export let data;
+
 </script>
 
 <div>
@@ -20,9 +23,15 @@
     <section>
       <h2>Feedback</h2>
       <div class="feedback-group">
-        <FeedbackCard number="1" imgSrc="/avatar-01.png" comment="This digital art piece is the perfect embodiment of contemporary art. It's fresh, thought-provoking, and totally ahead of its time." id="0xdf7c7f...24c7" />
-        <FeedbackCard number="2" imgSrc="/avatar-02.png" comment="This art is off the chain! It's like a fusion of creativity, imagination, and cutting-edge technology all in one." id="0xb25bf3...aaf4" />        
         
+        {#each data['feedback'] as fb, index}
+          <FeedbackCard 
+            number={index + 1} 
+            comment={fb.comment} 
+            account={fb.account}
+            id={fb.id} />
+        {/each}
+
         <form>
           <textarea name="" id="" cols="30" rows="7" placeholder="Speak your mind: Leave a comment"></textarea>
           <button class="btn-reply">Reply</button>
